@@ -1,1 +1,73 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', monospace;
+  background-color: #111827;
+  overflow-x: hidden;
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', monospace;
+}
+
+canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Button hover effects */
+button {
+  transition: all 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Pixel border effect */
+.pixel-border {
+  box-shadow: 
+    0 -4px 0 0 #374151,
+    0 4px 0 0 #374151,
+    -4px 0 0 0 #374151,
+    4px 0 0 0 #374151;
+}
+
+/* Animation for explosions */
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.hp-low {
+  animation: pulse-red 0.5s infinite;
+}
